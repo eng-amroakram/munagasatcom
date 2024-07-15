@@ -2,19 +2,19 @@
 
     <div class="row">
 
-        {{-- @can('tenders', auth()->user())
+        @can('tenders', auth()->user())
             <div class="col-xl-3 col-md-6 mb-5">
                 <div class="card card-cascade cascading-admin-card">
                     <div class="admin-up">
                         <i class="fas fa-city blue-color mr-3 z-depth-2"></i>
                         <div class="data">
                             <p class="text-uppercase fs-6 fw-bold">المناقصات</p>
-                            <h4 class="font-weight-bold dark-grey-text">45</h4>
+                            <h4 class="font-weight-bold dark-grey-text">??</h4>
                         </div>
                     </div>
                 </div>
             </div>
-        @endcan --}}
+        @endcan
 
         @can('company', auth()->user())
             <div class="col-xl-3 col-md-6 mb-5">
