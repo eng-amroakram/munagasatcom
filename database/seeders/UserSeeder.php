@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'account_type' => 'superadmin',
             'account_status' => 'active',
             "permissions" => json_encode(config('users.permissions.superadmin')),
-            'password' => Hash::make('2139539'),
+            'password' => Hash::make('123456789'),
         ]);
 
         User::create([
@@ -35,7 +35,7 @@ class UserSeeder extends Seeder
             'account_type' => 'admin',
             'account_status' => 'active',
             "permissions" => json_encode(config('users.permissions.admin')),
-            'password' => Hash::make('2139539'),
+            'password' => Hash::make('123456789'),
         ]);
 
         User::create([
@@ -47,7 +47,7 @@ class UserSeeder extends Seeder
             'account_type' => 'person',
             'account_status' => 'active',
             "permissions" => json_encode(config('users.permissions.person')),
-            'password' => Hash::make('2139539'),
+            'password' => Hash::make('123456789'),
         ]);
 
 
@@ -60,7 +60,7 @@ class UserSeeder extends Seeder
             'account_type' => 'company',
             'account_status' => 'active',
             "permissions" => json_encode(config('users.permissions.company')),
-            'password' => Hash::make('2139539'),
+            'password' => Hash::make('123456789'),
         ]);
 
         User::create([
@@ -72,7 +72,7 @@ class UserSeeder extends Seeder
             'account_type' => 'employee',
             'account_status' => 'active',
             "permissions" => json_encode(config('users.permissions.employee')),
-            'password' => Hash::make('2139539'),
+            'password' => Hash::make('123456789'),
         ]);
 
 
@@ -88,7 +88,7 @@ class UserSeeder extends Seeder
         //         'account_type' => 'person',
         //         'account_status' => 'active',
         //         "permissions" => json_encode(config('users.permissions.person')),
-        //         'password' => Hash::make('2139539'),
+        //         'password' => Hash::make('123456789'),
         //     ]);
 
         //     $x = $x + 1;
