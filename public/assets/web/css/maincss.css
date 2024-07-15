@@ -1,0 +1,9 @@
+@charset "utf-8";
+/*bootstrap css*/
+@import "bootstrap.css"; 
+/*bootstrap arabic css*/
+@import "bootstrap.rtl.css";
+/*fontawesom css*/
+@import "fontawesome.min.css";
+/*main style css*/
+@import "style.css";

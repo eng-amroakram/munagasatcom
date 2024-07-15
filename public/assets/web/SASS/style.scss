@@ -1,0 +1,76 @@
+$main-color: #315d90;
+$secondary-color:#88c06a;
+$third-color:#ffffff;
+
+
+@import url('https://fonts.googleapis.com/css?family=Cairo&display=swap');
+
+body {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+@mixin sub-title {
+    color: $main-color;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;  
+}
+
+@mixin sub-title-right {
+@include sub-title;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: $secondary-color;
+        bottom: -14px;
+        right: 0;
+    }
+}
+
+@mixin sub-title-center {
+
+    @include sub-title;
+    &:after {
+        content: '';
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: $secondary-color;
+        bottom: -14px;
+        left: 48%;
+    }
+}
+div#top {
+    width: 50px;
+    height: 50px;
+    background: #88c06a;
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 5px;
+    display: none;
+    color: #fff;
+    cursor: pointer;
+
+    &.down{
+        display: flex;
+    }
+}
+
+
+@import 'header';
+@import 'about-us';
+@import 'our-mission';
+@import 'our-services';
+@import 'statistics';
+@import 'our-partners';
+@import 'more-info';
+@import 'contact-us';
+@import 'footer';

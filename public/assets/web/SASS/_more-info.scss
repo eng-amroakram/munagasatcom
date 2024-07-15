@@ -1,0 +1,45 @@
+.more-info {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background: $main-color;
+
+    .content {
+        img {
+            margin-bottom: 40px;
+        }
+        p {
+            color: $third-color;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 40px;
+        }
+    }
+    .social-media {
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60px;
+        .social-icon {
+            margin-right: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(253, 253, 253, .31);
+            a {
+                text-decoration: none;
+                color: $third-color;
+                i {
+                    margin-top: 20px;
+                    font-size: 20px;
+                }
+            }
+        }
+        .social-icon:hover {
+            background: $secondary-color;
+        }
+    }
+
+}

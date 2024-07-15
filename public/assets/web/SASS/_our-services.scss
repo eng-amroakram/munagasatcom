@@ -1,0 +1,71 @@
+.our-services {
+
+    .sub-title {
+        padding-top: 70px;
+        margin-bottom: 70px;
+        text-align: center;
+        @include sub-title-center;
+    }
+    .image {
+        margin-bottom: 60px;
+        position: relative;
+        background: rgba(1, 68, 17, 0.623);
+        img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .overlay-1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #446a92c7;
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+            h3 {
+                padding-top: 60px;
+            }
+        
+    }
+        .overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba($secondary-color, 0.88);
+            padding: 15px;
+            color: #fff;
+            text-align: center;
+            opacity: 0;
+            transition: all 0.4s;
+
+
+
+            h4{
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 13px;
+                margin-bottom: 15px;
+            }
+            a{
+                border: 2px solid #fff;
+                color: #fff;
+
+            }
+        }
+        &:hover{
+            .overlay{
+                opacity: 1;
+            }
+            .overlay-1 {
+                opacity: 0;
+            }
+        }
+    }
+}

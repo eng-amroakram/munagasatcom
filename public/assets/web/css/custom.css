@@ -1,0 +1,635 @@
+@import url("https://fonts.googleapis.com/css?family=Cairo&display=swap");
+body {
+    direction: rtl;
+    font-family: "Cairo", sans-serif;
+}
+
+div#top {
+    width: 50px;
+    height: 50px;
+    background: #88c06a;
+    position: fixed;
+    bottom: 100px;
+    right: 40px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 5px;
+    display: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+div#top.down {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+header {
+    background: url(../images/header-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header .overlay {
+    background-color: #315d90eb;
+}
+
+header .overlay .header-content {
+    color: #ffffff;
+}
+
+header .overlay .header-content .navbar-toggler-icon i {
+    color: #ffffff;
+    font-size: 25px;
+    outline: none;
+}
+
+header .overlay .header-content .navbar-nav .nav-item {
+    font-size: 20px;
+}
+
+header .overlay .header-content .navbar-nav .nav-item .nav-link {
+    color: #ffffff;
+    margin-right: 40px;
+}
+
+header .overlay .header-content .navbar-nav .active {
+    position: relative;
+}
+
+header .overlay .header-content .navbar-nav .active:after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 2px;
+    background: #88c06a;
+    bottom: -8px;
+    left: 10px;
+}
+
+header .overlay .header-content .text {
+    text-align: center;
+}
+
+header .overlay .header-content .text h1 {
+    font-family: "Cairo", sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 0.82px;
+    margin-top: 100px;
+}
+
+header .overlay .header-content .text p {
+    font-size: 22px;
+    letter-spacing: 0.3px;
+    max-width: 750px;
+    margin: 40px auto 100px auto;
+}
+
+header .overlay .header-content .header-btn {
+    text-align: center;
+}
+
+header .overlay .header-content .header-btn .login-btn {
+    width: 280px;
+    height: 60px;
+    background-color: #88c06a;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    margin-bottom: 80px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    color: #ffffff;
+}
+
+header .overlay .header-content .header-btn .login-btn:hover {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-box-shadow: 0px 6px 15px 0px rgba(255, 255, 255, 0.267);
+    box-shadow: 0px 6px 15px 0px rgba(255, 255, 255, 0.267);
+}
+
+header .overlay .header-content .navbar {
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+header .overlay .header-content .navbar .navbar-brand img {
+    max-height: 60px;
+    margin-top: 20px;
+}
+
+header .overlay .header-content .navbar.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 10000;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.06);
+}
+
+header .overlay .header-content .navbar.fixed .nav-item .nav-link {
+    color: #000;
+}
+
+header .overlay .header-content .navbar.fixed .navbar-brand img {
+    -webkit-filter: brightness(0.3);
+    filter: brightness(0.3);
+}
+
+.about-us {
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.about-us .text {
+    text-align: right;
+}
+
+.about-us .text .sub-title {
+    color: #315d90;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.about-us .text .sub-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #88c06a;
+    bottom: -14px;
+    right: 0;
+}
+
+.about-us .text p {
+    max-width: 400px;
+    color: #757575;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.53px;
+    line-height: 40px;
+}
+
+.about-us .images img {
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.about-us .images p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    position: absolute;
+    border-radius: 4px;
+    border: 10px solid #ffffff;
+    background: #315d90;
+    padding: 30px 20px;
+    top: 25%;
+    max-width: 255px;
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.our-mission {
+    background: url(../images/92803.jpg);
+    background-size: contain;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.our-mission .sub-title {
+    padding-top: 70px;
+    color: #315d90;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.our-mission .sub-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #88c06a;
+    bottom: -14px;
+    left: 48%;
+}
+
+.our-mission .icon {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background: #88c06a;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.our-mission .icon i {
+    margin-top: 30%;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.our-mission .list-text {
+    color: #757575;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.our-services .sub-title {
+    padding-top: 70px;
+    margin-bottom: 70px;
+    text-align: center;
+    color: #315d90;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.our-services .sub-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #88c06a;
+    bottom: -14px;
+    left: 48%;
+}
+
+.our-services .image {
+    margin-bottom: 60px;
+    position: relative;
+    background: rgba(1, 68, 17, 0.623);
+}
+
+.our-services .image img {
+    width: 100%;
+    height: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.our-services .image .overlay-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #446a92c7;
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.our-services .image .overlay-1 h3 {
+    padding-top: 60px;
+}
+
+.our-services .image .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(136, 192, 106, 0.88);
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.our-services .image .overlay h4 {
+    margin-bottom: 10px;
+}
+
+.our-services .image .overlay p {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.our-services .image .overlay a {
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.our-services .image:hover .overlay {
+    opacity: 1;
+}
+
+.our-services .image:hover .overlay-1 {
+    opacity: 0;
+}
+
+.statistics {
+    background: url(../images/92803.jpg);
+    background-size: contain;
+    text-align: center;
+    padding-bottom: 70px;
+}
+
+.statistics .sub-title {
+    padding-top: 70px;
+    margin-bottom: 70px;
+    color: #315d90;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.statistics .sub-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #88c06a;
+    bottom: -14px;
+    left: 48%;
+}
+
+.statistics h3 {
+    color: #88c06a;
+    font-family: Roboto;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.statistics h3 .icon-pic {
+    width: 40px;
+    height: 40px;
+}
+
+.statistics .list-text {
+    color: #757575;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.our-partners {
+    padding-top: 70px;
+    padding-bottom: 100px;
+}
+
+.our-partners .sub-title {
+    text-align: right;
+    color: #315d90;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.our-partners .sub-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #88c06a;
+    bottom: -14px;
+    right: 0;
+}
+
+.our-partners .image img {
+    max-width: 100%;
+    height: 170px;
+    border-radius: 5px;
+    border: 1px solid #467ab6;
+    -o-object-fit: contain;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.more-info {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background: #315d90;
+}
+
+.more-info .content img {
+    margin-bottom: 40px;
+}
+
+.more-info .content p {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 40px;
+}
+
+.more-info .social-media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.more-info .social-media .social-icon {
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(253, 253, 253, 0.31);
+}
+
+.more-info .social-media .social-icon a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.more-info .social-media .social-icon a i {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.more-info .social-media .social-icon:hover {
+    background: #88c06a;
+}
+
+.contact-us {
+    background: url(../images/architecture-buildings-city-358502.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: center;
+    text-align: center;
+}
+
+.contact-us .overlay {
+    background: #fbfbfbd9;
+}
+
+.contact-us .overlay .sub-title {
+    padding-top: 60px;
+    font-size: 30px;
+    color: #315d90;
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.contact-us .overlay .sub-title:after {
+    content: "";
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background: #88c06a;
+    bottom: -14px;
+    left: 48%;
+}
+
+.contact-us .overlay h3 {
+    color: #315d90;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.contact-us .overlay form input,
+.contact-us .overlay form textarea {
+    border-radius: 5px;
+    border: 1.5px solid #81c372;
+    background: none;
+}
+
+.contact-us .overlay form .send-btn {
+    border-radius: 5px;
+    height: 40px;
+    width: 150px;
+    background: #88c06a;
+    text-align: center;
+    color: #ffffff;
+    margin: 40px auto 60px auto;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.contact-us .overlay form .send-btn:hover {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+    -webkit-box-shadow: 0px 6px 15px 0px rgba(105, 100, 150, 0.267);
+    box-shadow: 0px 6px 15px 0px rgba(105, 100, 150, 0.267);
+}
+
+footer {
+    background-color: #001b3a;
+    padding: 80px 0 40px 0;
+}
+
+footer .footer-top .contact-info li {
+    text-align: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+footer .footer-top .contact-info li i {
+    color: #88c06a;
+    margin-left: 10px;
+}
+
+footer .footer-top .image img {
+    max-width: 100%;
+}
+
+footer .footer-top .contact-form {
+    text-align: right;
+}
+
+footer .footer-top .contact-form p {
+    color: #fff;
+    text-align: center;
+}
+
+footer .footer-top .contact-form input {
+    background: transparent;
+}
+
+footer .footer-top .contact-form button {
+    background: #88c06a;
+    margin-top: 20px;
+    color: #fff;
+    padding: 8px 25px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer .footer-top .contact-form button:hover {
+    color: #88c06a;
+    background: #fff;
+}
+
+footer .footer-bottom {
+    margin-top: 100px;
+    position: relative;
+}
+
+footer .footer-bottom img {
+    max-width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+footer .footer-bottom:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 30%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 5px;
+    background: #fff;
+}
+
+footer .footer-bottom::before {
+    content: "";
+    position: absolute;
+    right: 0;
+    width: 30%;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 5px;
+    background: #fff;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,31 @@
+.our-mission {
+    background: url(../img/92803.jpg);
+    background-size: contain;
+    text-align: center;
+    padding-bottom: 70PX;
+    .sub-title {
+        padding-top: 70px;
+        @include sub-title-center;
+    }
+
+    .icon {
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        background: $secondary-color;
+        margin: auto;
+        margin-bottom: 15px;
+
+        i {
+            margin-top: 30%;
+            font-size: 30px;
+            color: $third-color;
+        }
+    }
+
+    .list-text {
+        color: #757575;
+        font-size: 20px;
+        font-weight: 600;
+    }
+}
