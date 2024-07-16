@@ -1,63 +1,9 @@
 <div class="container-fluid">
     <div class="p-4 mb-4">
 
-
-        <!-- Page Header-->
         <div class="row mb-4" wire:ignore>
-
-            <!-- Page Title  -->
-            <h2 style="font-weight: bold;">الفرص الاستثمارية</h2>
-            <!-- Page Title  -->
-
-            <!-- Breadcrumb -->
-            <nav data-mdb-navbar-init class="d-flex navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="font-weight: bold;">
-                            <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-                            <li class="breadcrumb-item"><a href="#">إدارة الفرص الاستثمارية</a></li>
-                            <li class="breadcrumb-item active"><a href="#">الفرص الاستثمارية</a>
-                            </li>
-                        </ol>
-                    </nav>
-
-                    <div class="d-flex align-items-center pe-3">
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-toggle="dropdown" class="link-secondary me-3 dropdown-toggle" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-gear"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                @can('create_opportunity', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" data-mdb-toggle="modal"
-                                            data-mdb-target="#create-new-opportunity-modal"
-                                            href="#create-new-opportunity-modal">
-                                            <i class="far fa-square-plus me-2"></i>
-                                            <span>إضافة فرصة</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('export_opportunities', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" href="#export-data" wire:click="exportUsers">
-                                            <i class="fas fa-file-export me-2"></i>
-                                            <span>تصدير البيانات</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-            <!-- Breadcrumb -->
+            @livewire('page-header', ['title' => 'الفرص الاستثمارية', 'label' => 'فرصة', 'model' => 'opportunity', 'perm' => 'opportunity'])
         </div>
-        <!-- Page Header-->
 
         <!-- Data Tables -->
         <div class="row" wire:ignore>
@@ -89,14 +35,10 @@
                 <thead>
                     <tr>
                         <th class="th-sm"><strong>ID</strong></th>
-                        <th data-mdb-sort="true" class="th-sm"><strong>الاسم</strong></th>
-                        @can('superadmin', auth()->user())
-                            <th data-mdb-sort="false" class="th-sm"><strong>صاحب المركز</strong></th>
-                        @endcan
+                        <th data-mdb-sort="true" class="th-sm"><strong>اسم الفرصة</strong></th>
                         <th data-mdb-sort="false" class="th-sm"><strong>القطاع</strong></th>
-                        @can('status_opportunity', auth()->user())
-                            <th data-mdb-sort="false" class="th-sm"><strong>حالة المركز</strong></th>
-                        @endcan
+                        <th data-mdb-sort="false" class="th-sm"><strong>تاريخ الاغلاق</strong></th>
+                        <th data-mdb-sort="false" class="th-sm"><strong>حالة المركز</strong></th>
                         @canany(['edit_opportunity', 'delete_opportunity'], auth()->user())
                             <th data-mdb-sort="false" class="th-sm"><strong>التحكم</strong></th>
                         @endcanany
@@ -107,34 +49,18 @@
                         <tr>
                             <td>{{ $opportunity->id }}</td>
                             <td>{{ $opportunity->name }}</td>
-                            @can('superadmin', auth()->user())
-                                <td><a target="_blank"
-                                        href="{{ route('admin.users.edit', ['user' => $opportunity->user_id]) }}">{{ $opportunity->user?->name }}</a>
-                                </td>
-                            @endcan
-
-                            <td>{{ $opportunity->sector->name }}</td>
+                            <td>{{ $opportunity->sector?->name }}</td>
+                            <td>{{ $opportunity->closing_date->format('Y-m-d') }}</td>
                             <td>
-                                @can('superadmin', auth()->user())
-                                    <div class="switch">
-                                        <label>
-                                            نشط
-                                            <input wire:click="changeStatus({{ $opportunity->id }})" type="checkbox"
-                                                {{ $opportunity->status == 'active' ? 'checked' : '' }}>
-                                            <span class="lever"></span>
-                                            غير نشط
-                                        </label>
-                                    </div>
-                                @endcan
-                                @can('company', auth()->user())
-                                    @if ($opportunity->status == 'active')
-                                        <span style="font-size: 12px;" class="badge rounded-pill badge-success">نشط</span>
-                                    @else
-                                        <span style="font-size: 12px;" class="badge rounded-pill badge-danger">غير
-                                            نشط</span>
-                                    @endif
-                                @endcan
-
+                                <div class="switch">
+                                    <label>
+                                        نشط
+                                        <input wire:click="changeStatus({{ $opportunity->id }})" type="checkbox"
+                                            {{ $opportunity->status == 'active' ? 'checked' : '' }}>
+                                        <span class="lever"></span>
+                                        غير نشط
+                                    </label>
+                                </div>
                             </td>
                             @canany(['edit_opportunity', 'delete_opportunity'], auth()->user())
                                 <td>
@@ -147,7 +73,7 @@
                                         @endcan
                                         @can('edit_opportunity', auth()->user())
                                             <a type="button" class="text-dark fa-lg me-2 ms-2 set-button-update"
-                                                href="{{ route('admin.centers.edit', ['center' => $opportunity->id]) }}"
+                                                href="{{ route('admin.opportunities.edit', ['opportunity' => $opportunity->id]) }}"
                                                 title="EditCenter">
                                                 <i class="far fa-pen-to-square"></i>
                                             </a>
@@ -210,9 +136,8 @@
                                 </a>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="create-new-opportunity-tab-2"
-                                    href="#create-new-opportunity-tabs-2" role="tab"
-                                    aria-controls="create-new-opportunity-tabs-2" aria-selected="false"
+                                <a class="nav-link" id="create-new-opportunity-tab-2" href="#create-new-opportunity-tabs-2"
+                                    role="tab" aria-controls="create-new-opportunity-tabs-2" aria-selected="false"
                                     data-mdb-toggle="pill">
                                     <i class="fas fa-circle-info me-1"></i>
                                     <strong>
@@ -222,9 +147,8 @@
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <a class="nav-link" id="create-new-opportunity-tab-3"
-                                    href="#create-new-opportunity-tabs-3" role="tab"
-                                    aria-controls="create-new-opportunity-tabs-3" aria-selected="false"
+                                <a class="nav-link" id="create-new-opportunity-tab-3" href="#create-new-opportunity-tabs-3"
+                                    role="tab" aria-controls="create-new-opportunity-tabs-3" aria-selected="false"
                                     data-mdb-toggle="pill">
                                     <i class="fas fa-circle-info me-1"></i>
                                     <strong>
@@ -277,9 +201,8 @@
                                         </div>
 
                                         <div class="col-md-6">
-                                            <x-mult-select-input id="opportunity_notes-opportunity"
-                                                label="اختيار الملاحظات" name="opportunity_notes" model="opportunity"
-                                                :options="opportunity_notes(true)"
+                                            <x-mult-select-input id="notes-opportunity" label="اختيار الملاحظات"
+                                                name="notes" model="opportunity" :options="opportunity_notes(true)"
                                                 modelid="#create-new-opportunity-modal"></x-mult-select-input>
                                         </div>
 
@@ -326,6 +249,21 @@
                                                     'amounts_table' => 'جدول كميات',
                                                 ]"
                                                 modelid="#create-new-opportunity-modal"></x-select-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3 file-opportunity-div">
+                                        <div class="col-md-12">
+                                            <x-file-input model="opportunity" label="ملف الكميات"
+                                                name="file_opportunity"></x-file-input>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3 units-opportunity-div">
+                                        <div class="col-md-12">
+                                            <x-mult-select-input id="units-opportunity" label="اختيار وحدات القياس"
+                                                name="units" model="opportunity" :options="units(true)"
+                                                modelid="#create-new-opportunity-modal"></x-mult-select-input>
                                         </div>
                                     </div>
 
@@ -406,6 +344,25 @@
         $(document).ready(function() {
 
             $method_selection = $("#method-opportunity");
+            $file_opportunity_div = $(".file-opportunity-div");
+            $units_opportunity_div = $(".units-opportunity-div");
+
+            $file_opportunity_div.show();
+            $units_opportunity_div.hide();
+
+            $method_selection.on('change', function() {
+                $value = $(this).val();
+                if ($value == "pdf_file") {
+                    $file_opportunity_div.show();
+                    $units_opportunity_div.hide();
+                }
+
+                if ($value == "amounts_table") {
+                    $file_opportunity_div.hide();
+                    $units_opportunity_div.show();
+                }
+
+            });
 
             Livewire.on("process-has-been-done", function() {
                 $(".reset-validation").text("");
@@ -413,6 +370,7 @@
             });
 
             Livewire.on("create-new-opportunity-errors", function(errors) {
+
                 $(".reset-validation").text("");
                 for (let key in errors[0]) {
                     if (errors[0].hasOwnProperty(key)) {
@@ -439,7 +397,7 @@
                 });
             });
 
-            var dateFromInput = document.querySelector('.closing-date-datepicker-class');
+            var dateFromInput = document.querySelector('.closing-date-time-datepicker-class');
             dateFromInput.addEventListener('dateChange.mdb.datepicker', function(e) {
                 let input = e.target.childNodes[1];
                 let value = input.value;

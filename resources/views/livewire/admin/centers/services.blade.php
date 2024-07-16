@@ -1,61 +1,9 @@
 <div class="container-fluid">
     <div class="p-4 mb-4">
 
-
-        <!-- Page Header-->
         <div class="row mb-4" wire:ignore>
-
-            <!-- Page Title  -->
-            <h2 style="font-weight: bold;">الخدمات</h2>
-            <!-- Page Title  -->
-
-            <!-- Breadcrumb -->
-            <nav data-mdb-navbar-init class="d-flex navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="font-weight: bold;">
-                            <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-                            <li class="breadcrumb-item"><a href="#">إدارة مراكز الاعمال</a></li>
-                            <li class="breadcrumb-item active"><a href="#">الخدمات</a>
-                            </li>
-                        </ol>
-                    </nav>
-
-                    <div class="d-flex align-items-center pe-3">
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-toggle="dropdown" class="link-secondary me-3 dropdown-toggle" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-gear"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                @can('create_service', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" data-mdb-toggle="modal"
-                                            data-mdb-target="#create-new-service-modal" href="#create-new-service-modal">
-                                            <i class="far fa-square-plus me-2"></i>
-                                            <span>إضافة خدمة</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('export_services', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" href="#export-data" wire:click="exportUsers">
-                                            <i class="fas fa-file-export me-2"></i>
-                                            <span>تصدير البيانات</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-            <!-- Breadcrumb -->
+            @livewire('page-header', ['title' => 'الخدمات', 'label' => 'خدمة', 'model' => 'service', 'perm' => 'service'])
         </div>
-        <!-- Page Header-->
 
         <!-- Data Tables -->
         <div class="row" wire:ignore>
@@ -229,8 +177,9 @@
 
                                     <div class="row mb-3">
                                         <div class="col-md-12">
-                                            <x-select-input modelid="#create-new-service-modal" label="الحالة" name="status" model="service"
-                                                id="add-service-status" :options="status_select()"></x-select-input>
+                                            <x-select-input modelid="#create-new-service-modal" label="الحالة"
+                                                name="status" model="service" id="add-service-status"
+                                                :options="status_select()"></x-select-input>
                                         </div>
                                     </div>
 

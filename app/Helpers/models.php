@@ -8,6 +8,7 @@ use App\Models\Sector;
 use App\Models\Service;
 use App\Models\Tag;
 use App\Models\TenderType;
+use App\Models\Unit;
 use App\Models\User;
 
 if (!function_exists('status_select')) {
@@ -77,6 +78,19 @@ if (!function_exists('opportunity_notes')) {
         }
 
         return OpportunityNote::data()->get();
+    }
+}
+
+if (!function_exists('units')) {
+    function units($search = null)
+    {
+        if ($search) {
+            return Unit::data()->active()->pluck("name", 'id')->mapWithKeys(function ($name, $id) {
+                return [$id => $name];
+            })->toArray();
+        }
+
+        return Unit::data()->get();
     }
 }
 

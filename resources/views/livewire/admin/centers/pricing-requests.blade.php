@@ -1,62 +1,9 @@
 <div class="container-fluid">
     <div class="p-4 mb-4">
 
-        <!-- Page Header-->
         <div class="row mb-4" wire:ignore>
-
-            <!-- Page Title  -->
-            <h2 style="font-weight: bold;">طلبات التسعير</h2>
-            <!-- Page Title  -->
-
-            <!-- Breadcrumb -->
-            <nav data-mdb-navbar-init class="d-flex navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="font-weight: bold;">
-                            <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-                            <li class="breadcrumb-item"><a href="#">إدارة طلبات التسعير</a></li>
-                            <li class="breadcrumb-item active"><a href="#">طلبات التسعير</a>
-                            </li>
-                        </ol>
-                    </nav>
-
-                    <div class="d-flex align-items-center pe-3">
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-toggle="dropdown" class="link-secondary me-3 dropdown-toggle" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-gear"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                @can('create_pricing_request', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" data-mdb-toggle="modal"
-                                            data-mdb-target="#create-new-pricing-request-modal"
-                                            href="#create-new-pricing-request-modal">
-                                            <i class="far fa-square-plus me-2"></i>
-                                            <span>إضافة طلب</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('export_pricing_requests', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" href="#export-data" wire:click="exportUsers">
-                                            <i class="fas fa-file-export me-2"></i>
-                                            <span>تصدير البيانات</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-            <!-- Breadcrumb -->
+        @livewire('page-header', ['title' => 'طلبات التسعير', 'label' => 'تسعيره', 'model' => 'pricing-request', 'perm' => 'pricing_request'])
         </div>
-        <!-- Page Header-->
 
         <!-- Data Tables -->
         <div class="row" wire:ignore>

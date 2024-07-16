@@ -11,6 +11,7 @@ use App\Livewire\Admin\Centers\PricingRequests;
 use App\Livewire\Admin\Centers\Sectors;
 use App\Livewire\Admin\Centers\Services;
 use App\Livewire\Admin\Index;
+use App\Livewire\Admin\Opportunities\EditOpportunity;
 use App\Livewire\Admin\Opportunities\Opportunities as AdminOpportunities;
 use App\Livewire\Admin\Opportunities\OpportunityNotes;
 use App\Livewire\Admin\Opportunities\Units;
@@ -85,6 +86,7 @@ Route::middleware(['web'])->group(function () {
 
             Route::prefix('opportunities/')->as('opportunities.')->group(function () {
                 Route::get('', AdminOpportunities::class)->name('index')->can('opportunities', [User::class]);
+                Route::get('edit/{opportunity}', EditOpportunity::class)->name('edit')->can('edit_opportunity', [User::class]);
                 Route::get('opportunity-notes', OpportunityNotes::class)->name('opportunity-notes')->can('opportunity_notes', [User::class]);
                 Route::get('units', Units::class)->name('units')->can('units', [User::class]);
             });

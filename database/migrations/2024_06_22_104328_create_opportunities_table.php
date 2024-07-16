@@ -18,8 +18,9 @@ return new class extends Migration
             $table->foreignId('sector_id')->nullable()->constrained('sectors')->nullOnDelete();
             $table->json('notes');
             $table->json('cities');
+            $table->json('units');
             $table->string('address');
-            $table->enum('method', ['file', 'amounts_table']);
+            $table->enum('method', ['pdf_file', 'amounts_table']);
             $table->string('file_opportunity')->nullable();
             $table->timestamp('closing_date');
             $table->string('manager');

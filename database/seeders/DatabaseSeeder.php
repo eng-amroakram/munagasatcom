@@ -22,7 +22,9 @@ class DatabaseSeeder extends Seeder
             SectorSeeder::class,
             ServiceSeeder::class,
             CenterSeeder::class,
-            TenderSeeder::class
+            TenderSeeder::class,
+            OpportunityNoteSeeder::class,
+            UnitSeeder::class
         ]);
     }
 }

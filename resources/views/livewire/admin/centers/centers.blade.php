@@ -1,64 +1,12 @@
 <div class="container-fluid">
     <div class="p-4 mb-4">
 
-
-        <!-- Page Header-->
         <div class="row mb-4" wire:ignore>
-
-            <!-- Page Title  -->
-            <h2 style="font-weight: bold;">مراكز الاعمال</h2>
-            <!-- Page Title  -->
-
-            <!-- Breadcrumb -->
-            <nav data-mdb-navbar-init class="d-flex navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="font-weight: bold;">
-                            <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-                            <li class="breadcrumb-item"><a href="#">إدارة مراكز الاعمال</a></li>
-                            <li class="breadcrumb-item active"><a href="#">مراكز الاعمال</a>
-                            </li>
-                        </ol>
-                    </nav>
-
-                    <div class="d-flex align-items-center pe-3">
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-toggle="dropdown" class="link-secondary me-3 dropdown-toggle" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-gear"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                @can('create_center', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" data-mdb-toggle="modal"
-                                            data-mdb-target="#create-new-center-modal" href="#create-new-center-modal">
-                                            <i class="far fa-square-plus me-2"></i>
-                                            <span>إضافة مركز</span>
-                                        </a>
-                                    </li>
-                                @endcan
-                                @can('export_centers', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" href="#export-data" wire:click="exportUsers">
-                                            <i class="fas fa-file-export me-2"></i>
-                                            <span>تصدير البيانات</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-            <!-- Breadcrumb -->
+            @livewire('page-header', ['title' => 'مراكز الاعمال', 'label' => 'مركز', 'model' => 'center', 'perm' => 'center'])
         </div>
-        <!-- Page Header-->
 
-        <!-- Data Tables -->
+
+        <!-- Search -->
         <div class="row" wire:ignore>
             <div class="row p-2 mb-3">
 
@@ -82,7 +30,10 @@
 
             </div>
         </div>
+        <!-- Search -->
 
+
+        <!-- Table -->
         <div class="table-responsive-md">
             <table class="table table-bordered text-center">
                 <thead>
@@ -161,6 +112,8 @@
                 </tbody>
             </table>
         </div>
+        <!-- Table -->
+
 
         <!-- Table Pagination -->
         <div class="d-flex justify-content-between">
@@ -407,7 +360,6 @@
             </div>
         </div>
     @endcanany
-
 
 </div>
 

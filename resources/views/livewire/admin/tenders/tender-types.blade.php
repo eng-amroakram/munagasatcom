@@ -1,64 +1,10 @@
 <div class="container-fluid">
     <div class="p-4 mb-4">
 
-
-        <!-- Page Header-->
         <div class="row mb-4" wire:ignore>
-
-            <!-- Page Title  -->
-            <h2 style="font-weight: bold;">أنواع المناقصات</h2>
-            <!-- Page Title  -->
-
-            <!-- Breadcrumb -->
-            <nav data-mdb-navbar-init class="d-flex navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="font-weight: bold;">
-                            <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-                            <li class="breadcrumb-item"><a href="#">إدارة المناقصات</a></li>
-                            <li class="breadcrumb-item active"><a href="#">أنواع المناقصات</a>
-                            </li>
-                        </ol>
-                    </nav>
-
-                    <div class="d-flex align-items-center pe-3">
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-toggle="dropdown" class="link-secondary me-3 dropdown-toggle" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-gear"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                @can('create_tender_type', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" data-mdb-toggle="modal"
-                                            data-mdb-target="#create-new-tender-type-modal"
-                                            href="#create-new-tender-type-modal">
-                                            <i class="far fa-square-plus me-2"></i>
-                                            <span>إضافة نوع مناقصة</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                                @can('export_tender_types', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" href="#export-data" wire:click="exportUsers">
-                                            <i class="fas fa-file-export me-2"></i>
-                                            <span>تصدير البيانات</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-            <!-- Breadcrumb -->
+            @livewire('page-header', ['title' => 'أنواع المناقصات', 'label' => 'نوع', 'model' => 'tender-type', 'perm' => 'tender_type'])
         </div>
-        <!-- Page Header-->
+
 
         <!-- Data Tables -->
         <div class="row" wire:ignore>

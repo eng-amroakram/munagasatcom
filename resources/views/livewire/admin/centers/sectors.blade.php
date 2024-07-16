@@ -1,64 +1,9 @@
 <div class="container-fluid">
     <div class="p-4 mb-4">
 
-
-        <!-- Page Header-->
         <div class="row mb-4" wire:ignore>
-
-            <!-- Page Title  -->
-            <h2 style="font-weight: bold;">القطاعات</h2>
-            <!-- Page Title  -->
-
-            <!-- Breadcrumb -->
-            <nav data-mdb-navbar-init class="d-flex navbar navbar-expand-lg bg-body-tertiary">
-                <div class="container-fluid">
-
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb" style="font-weight: bold;">
-                            <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
-                            <li class="breadcrumb-item"><a href="#">إدارة مراكز الاعمال</a></li>
-                            <li class="breadcrumb-item active"><a href="#">القطاعات</a>
-                            </li>
-                        </ol>
-                    </nav>
-
-                    <div class="d-flex align-items-center pe-3">
-                        <!-- Notifications -->
-                        <div class="dropdown">
-                            <a data-mdb-toggle="dropdown" class="link-secondary me-3 dropdown-toggle" href="#"
-                                id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-                                <i class="fas fa-gear"></i>
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                                @can('create_sector', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" data-mdb-toggle="modal"
-                                            data-mdb-target="#create-new-sector-modal" href="#create-new-sector-modal">
-                                            <i class="far fa-square-plus me-2"></i>
-                                            <span>إضافة قطاع</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                                @can('export_sectors', auth()->user())
-                                    <li>
-                                        <a class="dropdown-item" href="#export-data" wire:click="exportUsers">
-                                            <i class="fas fa-file-export me-2"></i>
-                                            <span>تصدير البيانات</span>
-                                        </a>
-                                    </li>
-                                @endcan
-
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </nav>
-            <!-- Breadcrumb -->
+            @livewire('page-header', ['title' => 'القطاعات', 'label' => 'قطاع', 'model' => 'sector', 'perm' => 'sector'])
         </div>
-        <!-- Page Header-->
-
         <!-- Data Tables -->
         <div class="row" wire:ignore>
             <div class="row p-2 mb-3">
@@ -192,8 +137,8 @@
                             style="background-color: #303030;">
                             <li class="nav-item" role="presentation">
                                 <a data-mdb-tab-init class="nav-link active" id="create-new-sector-tab-1"
-                                    href="#create-new-sector-tabs-1" role="tab"
-                                    aria-controls="create-new-sector-tabs-1" aria-selected="true">
+                                    href="#create-new-sector-tabs-1" role="tab" aria-controls="create-new-sector-tabs-1"
+                                    aria-selected="true">
                                     <i class="fas fa-circle-info me-1"></i>
                                     <strong>
                                         بيانات القطاع
