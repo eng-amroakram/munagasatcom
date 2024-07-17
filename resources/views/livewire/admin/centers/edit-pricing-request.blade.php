@@ -49,6 +49,17 @@
                             </div>
                         </div>
 
+                        <div class="mask mask-color" wire:loading wire:target="file_pricing_request"
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
                         <div class="row mb-3">
 
                             <div class="col-md-6">
@@ -130,6 +141,17 @@
                             </div>
                         </div>
 
+                        <div class="mask mask-color" wire:loading wire:target="file_pricing_request"
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <x-number-input label="مدة التنفيذ بالايام" name="duration"
@@ -181,6 +203,17 @@
                     <div class="card-body">
 
                         <div class="mask mask-color" wire:loading
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
+                        <div class="mask mask-color" wire:loading wire:target="file_pricing_request"
                             style="z-index: 1; background-color: #303030; opacity: 50%;">
                             <div
                                 class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">

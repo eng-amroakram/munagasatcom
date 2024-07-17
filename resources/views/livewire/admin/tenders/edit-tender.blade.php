@@ -34,7 +34,29 @@
 
                     <div class="card-body">
 
+                        <div class="mask mask-color" wire:loading wire:target="additional_instructions_file"
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
                         <div class="mask mask-color" wire:loading
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
+                        <div class="mask mask-color" wire:loading wire:target="bid_book"
                             style="z-index: 1; background-color: #303030; opacity: 50%;">
                             <div
                                 class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
@@ -52,8 +74,8 @@
                             </div>
 
                             <div class="col-md-4">
-                                <x-select-input modelid="#edit-tender-section" name="tender_type_id" model="tender" id="tender-type-id"
-                                    label="نوع المناقصة" :options="tender_types(true)"></x-select-input>
+                                <x-select-input modelid="#edit-tender-section" name="tender_type_id" model="tender"
+                                    id="tender-type-id" label="نوع المناقصة" :options="tender_types(true)"></x-select-input>
                             </div>
 
                             <div class="col-md-4">
@@ -63,18 +85,19 @@
 
                         <div class="row mb-3">
                             <div class="col-md-4">
-                                <x-mult-select-input modelid="#edit-tender-section" name="cities" model="tender" id="tender-cities"
-                                    label="مدن المناقصة" :options="cities(true)"></x-mult-select-input>
+                                <x-mult-select-input modelid="#edit-tender-section" name="cities" model="tender"
+                                    id="tender-cities" label="مدن المناقصة" :options="cities(true)"></x-mult-select-input>
                             </div>
 
                             <div class="col-md-4">
-                                <x-mult-select-input modelid="#edit-tender-section" name="activities" model="tender" id="tender-activities"
-                                    label="أنشطة المناقصة" :options="activities(true)"></x-mult-select-input>
+                                <x-mult-select-input modelid="#edit-tender-section" name="activities" model="tender"
+                                    id="tender-activities" label="أنشطة المناقصة"
+                                    :options="activities(true)"></x-mult-select-input>
                             </div>
 
                             <div class="col-md-4">
-                                <x-mult-select-input modelid="#edit-tender-section" name="tags" model="tender" id="tender-tags"
-                                    label="وسوم المناقصة" :options="tags(true)"></x-mult-select-input>
+                                <x-mult-select-input modelid="#edit-tender-section" name="tags" model="tender"
+                                    id="tender-tags" label="وسوم المناقصة" :options="tags(true)"></x-mult-select-input>
                             </div>
                         </div>
 
@@ -86,8 +109,8 @@
                             </div>
 
                             <div class="col-md-4">
-                                <x-select-input modelid="#edit-tender-section" name="government_broker_id" model="tender"
-                                    id="tender-government-broker-id" label="الجهة الحكومية"
+                                <x-select-input modelid="#edit-tender-section" name="government_broker_id"
+                                    model="tender" id="tender-government-broker-id" label="الجهة الحكومية"
                                     :options="government_brokers(true)"></x-select-input>
                             </div>
 
@@ -204,8 +227,8 @@
 
                         <div class="row mb-3">
                             <div class="col-md-6">
-                                <x-select-input modelid="#edit-tender-section" label="حالة المناقصة" name="status" model="tender"
-                                    id="tender-status" :options="status_select()"></x-select-input>
+                                <x-select-input modelid="#edit-tender-section" label="حالة المناقصة" name="status"
+                                    model="tender" id="tender-status" :options="status_select()"></x-select-input>
                             </div>
                         </div>
 

@@ -2,7 +2,7 @@
     <div class="p-4 mb-4">
 
         <div class="row mb-4" wire:ignore>
-        @livewire('page-header', ['title' => 'طلبات التسعير', 'label' => 'تسعيره', 'model' => 'pricing-request', 'perm' => 'pricing_request'])
+            @livewire('page-header', ['title' => 'طلبات التسعير', 'label' => 'تسعيره', 'model' => 'pricing-request', 'perm' => 'pricing_request'])
         </div>
 
         <!-- Data Tables -->
@@ -46,9 +46,7 @@
                         <th data-mdb-sort="false" class="th-sm"><strong>تاريخ الاغلاق</strong></th>
                         <th data-mdb-sort="false" class="th-sm"><strong>هل يحتاج لزياة ؟</strong></th>
                         <th data-mdb-sort="false" class="th-sm"><strong>هل يحتاج لعينة ؟</strong></th>
-                        @can('status_pricing_request', auth()->user())
-                            <th data-mdb-sort="false" class="th-sm"><strong>حالة التسعيرة</strong></th>
-                        @endcan
+                        <th data-mdb-sort="false" class="th-sm"><strong>حالة التسعيرة</strong></th>
                         @canany(['edit_pricing_request', 'delete_pricing_request'], auth()->user())
                             <th data-mdb-sort="false" class="th-sm"><strong>التحكم</strong></th>
                         @endcanany
@@ -114,6 +112,9 @@
                                 @endcan
 
                             </td>
+
+
+
                             @canany(['edit_pricing_request', 'delete_pricing_request'], auth()->user())
                                 <td>
                                     <div class="d-flex justify-content-center">
@@ -217,6 +218,17 @@
                     <div class="tab-content" id="ex1-content">
 
                         <div class="mask mask-color" wire:loading
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
+                        <div class="mask mask-color" wire:loading wire:target="file_pricing_request"
                             style="z-index: 1; background-color: #303030; opacity: 50%;">
                             <div
                                 class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">

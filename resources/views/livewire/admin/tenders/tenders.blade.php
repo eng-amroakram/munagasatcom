@@ -184,6 +184,30 @@
                                 </div>
                             </div>
 
+
+                            <div class="mask mask-color" wire:loading wire:target="additional_instructions_file"
+                                style="z-index: 1; background-color: #303030; opacity: 50%;">
+                                <div
+                                    class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="sr-only text-primary">Loading...</span>
+                                    </div>
+                                    <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                                </div>
+                            </div>
+
+
+                            <div class="mask mask-color" wire:loading wire:target="bid_book"
+                                style="z-index: 1; background-color: #303030; opacity: 50%;">
+                                <div
+                                    class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="sr-only text-primary">Loading...</span>
+                                    </div>
+                                    <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                                </div>
+                            </div>
+
                             <div class="tab-pane fade show active" id="create-new-tender-tabs-1" role="tabpanel"
                                 aria-labelledby="create-new-tender-tab-1">
 

@@ -18,11 +18,11 @@
                             <li class="breadcrumb-item"><a href="#">لوحة التحكم</a></li>
                             @can('company', auth()->user())
                                 <li class="breadcrumb-item"><a href="#">إدارة الموظفين</a></li>
-                                @endcan
+                            @endcan
 
-                                @can('superadmin', auth()->user())
+                            @can('superadmin', auth()->user())
                                 <li class="breadcrumb-item"><a href="#">إدارة العملاء</a></li>
-                                @endcan
+                            @endcan
                             <li class="breadcrumb-item active"><a href="#">تعديل المستخدم: {{ $user->name }}</a>
                             </li>
                         </ol>
@@ -115,6 +115,17 @@
                 <div class="card mb-4">
                     <div class="card-body">
                         <div class="mask mask-color" wire:loading
+                            style="z-index: 1; background-color: #303030; opacity: 50%;">
+                            <div
+                                class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="sr-only text-primary">Loading...</span>
+                                </div>
+                                <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                            </div>
+                        </div>
+
+                        <div class="mask mask-color" wire:loading wire:target="photo"
                             style="z-index: 1; background-color: #303030; opacity: 50%;">
                             <div
                                 class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
@@ -367,6 +378,17 @@
 
 
                             <div class="mask mask-color" wire:loading
+                                style="z-index: 1; background-color: #303030; opacity: 50%;">
+                                <div
+                                    class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="spinner-border text-primary" role="status">
+                                        <span class="sr-only text-primary">Loading...</span>
+                                    </div>
+                                    <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
+                                </div>
+                            </div>
+
+                            <div class="mask mask-color" wire:loading wire:target="photo"
                                 style="z-index: 1; background-color: #303030; opacity: 50%;">
                                 <div
                                     class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">

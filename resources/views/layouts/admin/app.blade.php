@@ -97,6 +97,7 @@
     @stack('create-new-opportunity-note-script')
     @stack('create-new-opportunity-script')
     @stack('create-new-unit-script')
+    @stack('edit-opportunity-script')
 
 
 

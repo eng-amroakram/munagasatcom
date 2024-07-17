@@ -9,10 +9,12 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\Attributes\Layout;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 
 class EditPricingRequest extends Component
 {
     use LivewireAlert;
+    use WithFileUploads;
 
     public $pricing_request = null;
 
