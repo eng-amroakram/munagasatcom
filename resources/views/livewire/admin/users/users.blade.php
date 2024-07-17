@@ -371,22 +371,9 @@
 
                                 <div class="row">
                                     <div class="col-md-6">
-
-                                        <label class="form-label" for="forPhoto"><strong>صورة
-                                                المستخدم</strong></label>
-                                        <div class="input-group">
-                                            <span class="input-group-text">
-                                                <i class="fas fa-image"></i>
-                                            </span>
-
-                                            <input type="file" wire:model.defer="photo" class="form-control"
-                                                placeholder="ارفق صورة" />
-
-                                        </div>
-                                        <div class="form-helper text-danger"></div>
+                                        <x-file-input name="photo" label="صورة المستخدم"
+                                            model="user"></x-file-input>
                                     </div>
-
-
                                 </div>
                             </div>
 

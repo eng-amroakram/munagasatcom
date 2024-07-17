@@ -216,21 +216,8 @@
 
                                     <div class="row">
                                         <div class="col-md-12">
-
-                                            <label class="form-label" for="forPhoto"><strong>صورة شعار الجهة
-                                                    الحكومية</strong></label>
-                                            <div class="input-group">
-                                                <span class="input-group-text">
-                                                    <i class="fas fa-image"></i>
-                                                </span>
-
-                                                <input type="file" wire:model.defer="photo" class="form-control"
-                                                    placeholder="ارفق صورة" />
-
-                                            </div>
-                                            <div
-                                                class="form-helper text-danger photo-create-new-government-broker-validation reset-validation">
-                                            </div>
+                                            <x-file-input name="photo" model="government-broker"
+                                                label="شعار الجهة الحكومية"></x-file-input>
                                         </div>
                                     </div>
                                 </div>
