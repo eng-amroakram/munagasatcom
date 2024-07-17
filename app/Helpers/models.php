@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Services\Services;
 use App\Models\Activity;
 use App\Models\City;
 use App\Models\GovernmentBroker;
@@ -64,6 +65,22 @@ if (!function_exists('count_employees')) {
     function count_employees()
     {
         $employees = User::where('account_type', 'employee')->where('user_owner_id', auth()->id())->get();
+        return $employees->count();
+    }
+}
+
+if (!function_exists('count_person')) {
+    function count_person()
+    {
+        $employees = User::where('account_type', 'person')->get();
+        return $employees->count();
+    }
+}
+
+if (!function_exists('count_company')) {
+    function count_company()
+    {
+        $employees = User::where('account_type', 'company')->get();
         return $employees->count();
     }
 }
@@ -169,5 +186,13 @@ if (!function_exists('units_select')) {
             'piece' =>  'حبة',
             'roll' =>  'لفة',
         ];
+    }
+}
+
+if (!function_exists('models_count')) {
+    function models_count($model)
+    {
+        $model =  Services::modelInstance($model);
+        return $model::count();
     }
 }

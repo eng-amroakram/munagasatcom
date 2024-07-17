@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             CenterSeeder::class,
             TenderSeeder::class,
             OpportunityNoteSeeder::class,
-            UnitSeeder::class
+            UnitSeeder::class,
+            OpportunitySeeder::class
         ]);
     }
 }

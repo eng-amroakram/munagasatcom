@@ -56,6 +56,11 @@ class Opportunity extends Model
         ]);
     }
 
+    public function getImageAttribute()
+    {
+        return asset('assets/admin/images/no-image-available.jpg');
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');

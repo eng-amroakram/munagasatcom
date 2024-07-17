@@ -17,25 +17,34 @@
 
         @can('tenders', auth()->user())
             <li class="sidenav-item">
-                <a class="sidenav-link"><i class="fas fa-cogs pr-3 me-2 "></i><span>المناقصات الحكومية</span></a>
+                <a class="sidenav-link"><i class="fas fa-briefcase pr-3 me-2"></i><span>المناقصات الحكومية</span></a>
 
                 <ul class="sidenav-collapse">
 
                     @can('tenders', auth()->user())
                         <li class="sidenav-item ">
-                            <a class="sidenav-link" href="{{ route('admin.tenders.index') }}">إدارة المناقصات</a>
+                            <a class="sidenav-link" href="{{ route('admin.tenders.index') }}">
+                                <i class="fas fa-briefcase pr-3 me-2"></i>
+                                <span>
+                                    إدارة المناقصات
+                                </span>
+                            </a>
                         </li>
                     @endcan
 
                     @can('government_brokers', auth()->user())
                         <li class="sidenav-item">
-                            <a class="sidenav-link" href="{{ route('admin.tenders.government-brokers') }}">الجهات الحكومية</a>
+                            <a class="sidenav-link" href="{{ route('admin.tenders.government-brokers') }}">
+                                <i class="fas fa-building-columns pr-3 me-2"></i>
+                                الجهات الحكومية</a>
                         </li>
                     @endcan
 
                     @can('activities', auth()->user())
                         <li class="sidenav-item">
-                            <a class="sidenav-link" href="{{ route('admin.tenders.activities') }}">الانشطة</a>
+                            <a class="sidenav-link" href="{{ route('admin.tenders.activities') }}">
+                                <i class="fas fa-chart-line pr-3 me-2"></i>
+                                الانشطة</a>
                         </li>
                     @endcan
 
@@ -50,13 +59,17 @@
 
                     @can('tags', auth()->user())
                         <li class="sidenav-item ">
-                            <a class="sidenav-link" href="{{ route('admin.tenders.tags') }}">وسوم المناقصات</a>
+                            <a class="sidenav-link" href="{{ route('admin.tenders.tags') }}">
+                                <i class="fas fa-tags pr-3 me-2"></i>
+                                وسوم المناقصات</a>
                         </li>
                     @endcan
 
                     @can('tender_types', auth()->user())
                         <li class="sidenav-item">
-                            <a class="sidenav-link" href="{{ route('admin.tenders.tender-types') }}">أنواع المناقصات</a>
+                            <a class="sidenav-link" href="{{ route('admin.tenders.tender-types') }}">
+                                <i class="fas fa-bars pr-3 me-2"></i>
+                                أنواع المناقصات</a>
                         </li>
                     @endcan
                 </ul>
