@@ -14,7 +14,7 @@ class UserPolicy
         $methodNames = config('users.permissions.permissions_function_names');
         foreach ($methodNames as $methodName) {
             $this->methods[$methodName] = function (User $user) use ($methodName) {
-                return $user->permissions[$methodName] ?? false;
+                return in_array($methodName, $user->permissions) ?? false;
             };
         }
     }

@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'photo' => '',
             'account_type' => 'superadmin',
             'account_status' => 'active',
-            "permissions" => json_encode(config('users.permissions.superadmin')),
+            "permissions" => config('users.permissions.superadmin'),
             'password' => Hash::make('123456789'),
         ]);
 
@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
             'photo' => '',
             'account_type' => 'admin',
             'account_status' => 'active',
-            "permissions" => json_encode(config('users.permissions.admin')),
+            "permissions" => config('users.permissions.admin'),
             'password' => Hash::make('123456789'),
         ]);
 
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'photo' => '',
             'account_type' => 'person',
             'account_status' => 'active',
-            "permissions" => json_encode(config('users.permissions.person')),
+            "permissions" => config('users.permissions.person'),
             'password' => Hash::make('123456789'),
         ]);
 
@@ -59,7 +59,7 @@ class UserSeeder extends Seeder
             'photo' => '',
             'account_type' => 'company',
             'account_status' => 'active',
-            "permissions" => json_encode(config('users.permissions.company')),
+            "permissions" => config('users.permissions.company'),
             'password' => Hash::make('123456789'),
         ]);
 
@@ -71,7 +71,7 @@ class UserSeeder extends Seeder
             'photo' => '',
             'account_type' => 'employee',
             'account_status' => 'active',
-            "permissions" => json_encode(config('users.permissions.employee')),
+            "permissions" => config('users.permissions.employee'),
             'password' => Hash::make('123456789'),
         ]);
 
@@ -87,7 +87,7 @@ class UserSeeder extends Seeder
         //         'photo' => '',
         //         'account_type' => 'person',
         //         'account_status' => 'active',
-        //         "permissions" => json_encode(config('users.permissions.person')),
+        //         "permissions" => config('users.permissions.person'),
         //         'password' => Hash::make('123456789'),
         //     ]);
 

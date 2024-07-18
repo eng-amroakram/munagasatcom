@@ -81,6 +81,7 @@ class Opportunities extends Component
             "email" => $this->email,
             "status" => $this->status
         ];
+        dd($data);
 
         $rules = $service->rules();
         $messages = $service->messages();

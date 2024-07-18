@@ -88,7 +88,7 @@
             <div class="col-lg-8">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <div class="mask mask-color" wire:loading
+                        {{-- <div class="mask mask-color" wire:loading
                             style="z-index: 1; background-color: #303030; opacity: 50%;">
                             <div
                                 class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
@@ -108,7 +108,7 @@
                                 </div>
                                 <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="row mb-3">
                             <div class="col-md-6">
@@ -187,8 +187,7 @@
                             <div class="col-md-6">
                                 <label class="form-label" for="forAccountType"><strong>حالة
                                         الحساب</strong></label>
-                                <select class="select" id="edit-user-account-status"
-                                    wire:model.defer="account_status">
+                                <select class="select" id="edit-user-account-status" wire:model.defer="account_status">
                                     <option value="active">نشط</option>
                                     <option value="inactive">غير نشط</option>
                                 </select>
@@ -251,7 +250,7 @@
                             <a href="#section-2" data-mdb-smooth-scroll="smooth-scroll"
                                 data-mdb-container="#permissions-1"></a>
 
-
+                            {{--
                             <div class="mask mask-color" wire:loading
                                 style="z-index: 1; background-color: #303030; opacity: 50%;">
                                 <div
@@ -272,14 +271,14 @@
                                     </div>
                                     <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
                                 </div>
-                            </div>
+                            </div> --}}
 
 
                             @foreach (config('users.permissions.permissions_names') as $permission_type => $permissions)
                                 <h5 class="card-title mb-3">{{ __($permission_type) }}</h5>
                                 <div class="row mb-3">
 
-                                    @foreach ($permissions as $permission => $check)
+                                    @foreach ($permissions as $permission)
                                         <div class="col-md-2">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox"

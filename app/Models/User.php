@@ -82,9 +82,14 @@ class User extends Authenticatable
         return $this->attributes['photo'] ? asset('storage/' . $this->attributes['photo']) : asset('assets/admin/images/no-image-available.jpg');
     }
 
-    public function getPermissionsAttribute()
+    public function setPermissionsAttribute($value)
     {
-        return json_decode($this->attributes['permissions'], true);
+        $this->attributes['permissions'] = json_encode($value);
+    }
+
+    public function getPermissionsAttribute($value)
+    {
+        return json_decode($value);
     }
 
     public function scopeFilters(Builder $builder, array $filters = [])

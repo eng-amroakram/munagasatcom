@@ -195,7 +195,7 @@
 
                     <div class="tab-content" id="ex1-content">
 
-                        <div class="mask mask-color" wire:loading
+                        {{-- <div class="mask mask-color" wire:loading
                             style="z-index: 1; background-color: #303030; opacity: 50%;">
                             <div
                                 class="position-absolute w-100 h-100 d-flex flex-column align-items-center justify-content-center">
@@ -215,7 +215,7 @@
                                 </div>
                                 <h4 class="text-white">جاري التحميل يرجى الانتظار ...</h4>
                             </div>
-                        </div>
+                        </div> --}}
 
 
 
@@ -404,7 +404,7 @@
                                         <h5 class="card-title mb-3">{{ __($permission_type) }}</h5>
                                         <div class="row mb-3">
 
-                                            @foreach ($permissions as $permission => $check)
+                                            @foreach ($permissions as $permission)
                                                 <div class="col-md-3">
                                                     <div class="form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox"

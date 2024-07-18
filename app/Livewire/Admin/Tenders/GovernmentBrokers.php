@@ -98,6 +98,9 @@ class GovernmentBrokers extends Component
             "photo" => $this->photo,
             "status" => $this->status,
         ];
+
+        dd($data);
+
         $rules = $service->rules();
         $messages = $service->messages();
         $validator = Validator::make($data, $rules, $messages);

@@ -70,7 +70,7 @@ class EditUser extends Component
             "password" => $this->password,
             "account_type" => $account_type,
             "account_status" => $this->account_status,
-            "permissions" => json_encode($this->permissions),
+            "permissions" => $this->permissions,
         ];
 
         $rules = $service->rules($this->user->id);

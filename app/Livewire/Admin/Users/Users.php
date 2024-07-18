@@ -102,8 +102,9 @@ class Users extends Component
             "password" => $this->password,
             "account_type" => $account_type,
             "account_status" => $this->account_status,
-            "permissions" => json_encode($this->permissions)
+            "permissions" => $this->permissions
         ];
+
         $rules = $service->rules();
         $messages = $service->messages();
         $validator = Validator::make($data, $rules, $messages);
