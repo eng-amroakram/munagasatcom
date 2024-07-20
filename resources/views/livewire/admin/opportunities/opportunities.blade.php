@@ -30,8 +30,8 @@
             </div>
         </div>
 
-        <div class="table-responsive-md">
-            <table class="table table-bordered text-center">
+        <div class="table-responsive-md text-center">
+            <table class="table table-bordered text-center" style="margin-bottom: 0rem;">
                 <thead>
                     <tr>
                         <th class="th-sm"><strong>ID</strong></th>
@@ -44,7 +44,7 @@
                         @endcanany
                     </tr>
                 </thead>
-                <tbody>
+                <tbody wire:loading.remove>
                     @foreach ($opportunities as $opportunity)
                         <tr>
                             <td>{{ $opportunity->id }}</td>
@@ -87,6 +87,10 @@
 
                 </tbody>
             </table>
+            <div class="datatable-loader bg-light" style="height: 8px;" wire:loading>
+                <span class="datatable-loader-inner"><span class="datatable-progress bg-primary"></span></span>
+            </div>
+            <p class="text-center text-muted my-4" wire:loading>جاري تحميل البيانات ...</p>
         </div>
 
         <!-- Table Pagination -->

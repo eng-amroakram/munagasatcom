@@ -34,8 +34,8 @@
 
         </div>
 
-        <div class=" table-responsive-md">
-            <table class="table table-bordered text-center">
+        <div class=" table-responsive-md text-center">
+            <table class="table table-bordered text-center" style="margin-bottom: 0rem;">
                 <thead>
                     <tr>
                         <th class="th-sm"><strong>ID</strong></th>
@@ -48,7 +48,7 @@
                         <th data-mdb-sort="false" class="th-sm"><strong>التحكم</strong></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody wire:loading.remove>
                     @foreach ($government_brokers as $government_broker)
                         <tr>
                             <td>{{ $government_broker->id }}</td>
@@ -101,6 +101,11 @@
 
                 </tbody>
             </table>
+
+            <div class="datatable-loader bg-light" style="height: 8px;" wire:loading>
+                <span class="datatable-loader-inner"><span class="datatable-progress bg-primary"></span></span>
+            </div>
+            <p class="text-center text-muted my-4" wire:loading>جاري تحميل البيانات ...</p>
         </div>
 
         <!-- Table Pagination -->
@@ -175,8 +180,8 @@
                             </div> --}}
 
 
-                            <div class="tab-pane fade show active" id="create-new-government-broker-tabs-1"
-                                role="tabpanel" aria-labelledby="create-new-government-broker-tab-1">
+                            <div class="tab-pane fade show active" id="create-new-government-broker-tabs-1" role="tabpanel"
+                                aria-labelledby="create-new-government-broker-tab-1">
 
                                 <div class="modal-body">
                                     <div class="row mb-3">
