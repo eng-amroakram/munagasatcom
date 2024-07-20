@@ -49,7 +49,7 @@
                     </tr>
                 </thead>
                 <tbody wire:loading.remove>
-                    @foreach ($tender_types as $tender_type)
+                    @forelse ($tender_types as $tender_type)
                         <tr>
                             <td>{{ $tender_type->id }}</td>
                             <td>{{ $tender_type->name }}</td>
@@ -89,7 +89,13 @@
                             @endcanany
 
                         </tr>
-                    @endforeach
+
+                        @empty
+
+                        <tr>
+                            <td colspan="4" class="fw-bold fs-6">لا يوجد نتائج !!</td>
+                        </tr>
+                    @endforelse
 
                 </tbody>
             </table>
@@ -101,7 +107,7 @@
         </div>
 
         <!-- Table Pagination -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-4">
 
             <nav aria-label="...">
                 <ul class="pagination pagination-circle">

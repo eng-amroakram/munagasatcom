@@ -47,7 +47,7 @@
                     </tr>
                 </thead>
                 <tbody wire:loading.remove>
-                    @foreach ($cities as $city)
+                    @forelse ($cities as $city)
                         <tr>
                             <td>{{ $city->id }}</td>
                             <td>{{ $city->name }}</td>
@@ -87,7 +87,13 @@
                                 </td>
                             @endcanany
                         </tr>
-                    @endforeach
+
+                        @empty
+
+                        <tr>
+                            <td colspan="4" class="fw-bold fs-6">لا يوجد نتائج !!</td>
+                        </tr>
+                    @endforelse
 
                 </tbody>
             </table>
@@ -98,7 +104,7 @@
         </div>
 
         <!-- Table Pagination -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-4">
 
             <nav aria-label="...">
                 <ul class="pagination pagination-circle">

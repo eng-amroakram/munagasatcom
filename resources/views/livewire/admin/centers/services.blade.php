@@ -55,7 +55,7 @@
                     </tr>
                 </thead>
                 <tbody wire:loading.remove>
-                    @foreach ($services as $service)
+                    @forelse ($services as $service)
                         <tr>
                             <td>{{ $service->id }}</td>
                             <td>{{ $service->name }}</td>
@@ -97,7 +97,12 @@
                             @endcanany
 
                         </tr>
-                    @endforeach
+                        @empty
+
+                        <tr>
+                            <td colspan="5" class="fw-bold fs-6">لا يوجد نتائج !!</td>
+                        </tr>
+                    @endforelse
 
                 </tbody>
             </table>
@@ -109,7 +114,7 @@
         </div>
 
         <!-- Table Pagination -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-4">
 
             <nav aria-label="...">
                 <ul class="pagination pagination-circle">

@@ -45,7 +45,7 @@
                     </tr>
                 </thead>
                 <tbody wire:loading.remove>
-                    @foreach ($opportunity_notes as $opportunity_note)
+                    @forelse ($opportunity_notes as $opportunity_note)
                         <tr>
                             <td>{{ $opportunity_note->id }}</td>
                             <td>{{ $opportunity_note->name }}</td>
@@ -95,7 +95,14 @@
                             @endcanany
 
                         </tr>
-                    @endforeach
+
+                        @empty
+
+                        <tr>
+                            <td colspan="4" class="fw-bold fs-6">لا يوجد نتائج !!</td>
+                        </tr>
+                    @endforelse
+
 
                 </tbody>
             </table>
@@ -106,7 +113,7 @@
         </div>
 
         <!-- Table Pagination -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-4">
 
             <nav aria-label="...">
                 <ul class="pagination pagination-circle">

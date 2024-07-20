@@ -53,7 +53,7 @@
                     </tr>
                 </thead>
                 <tbody wire:loading.remove>
-                    @foreach ($pricing_requests as $pricing_request)
+                    @forelse ($pricing_requests as $pricing_request)
                         <tr>
                             <td>{{ $pricing_request->id }}</td>
                             <td>{{ $pricing_request->name }}</td>
@@ -136,7 +136,12 @@
                             @endcanany
 
                         </tr>
-                    @endforeach
+                        @empty
+
+                        <tr>
+                            <td colspan="12" class="fw-bold fs-6">لا يوجد نتائج !!</td>
+                        </tr>
+                    @endforelse
 
                 </tbody>
             </table>
@@ -148,7 +153,7 @@
         </div>
 
         <!-- Table Pagination -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-4">
 
             <nav aria-label="...">
                 <ul class="pagination pagination-circle">

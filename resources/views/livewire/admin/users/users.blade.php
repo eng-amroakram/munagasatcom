@@ -64,7 +64,7 @@
                     </tr>
                 </thead>
                 <tbody wire:loading.remove>
-                    @foreach ($users_models as $user)
+                    @forelse ($users_models as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
                             <td>
@@ -117,7 +117,16 @@
 
 
                         </tr>
-                    @endforeach
+
+                        @empty
+
+                        <tr>
+                            <td colspan="8" class="fw-bold fs-6">لا يوجد نتائج !!</td>
+                        </tr>
+
+
+
+                    @endforelse
 
                 </tbody>
             </table>
@@ -129,7 +138,7 @@
         </div>
 
         <!-- Table Pagination -->
-        <div class="d-flex justify-content-between">
+        <div class="d-flex justify-content-between mt-4">
 
             <nav aria-label="...">
                 <ul class="pagination pagination-circle">
